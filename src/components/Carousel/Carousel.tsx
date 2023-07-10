@@ -53,8 +53,8 @@ const Carousel = () => {
     <div className="!overflow-hidden">
       <Slider {...settings}>
         {slides.map((slide, index) => (
-          <div className="">
-            <img src={slide} alt="protector" className="pr-4 w-full" key={index} />
+          <div className="" key={index} >
+            <img src={slide} alt="protector" className="pr-4 w-full" />
           </div>
         ))}
       </Slider>
