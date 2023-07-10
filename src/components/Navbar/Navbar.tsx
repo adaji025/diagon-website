@@ -1,0 +1,50 @@
+"use client";
+
+import React, { useState } from "react";
+import SideNav from "./SideNav";
+import { Cancel, Hamburger } from "../Svg/Svg";
+import Link from "next/link";
+
+const Navbar = () => {
+  const [sideNav, setSideNav] = useState(true);
+  return (
+    <>
+      <SideNav {...{ sideNav, setSideNav }} />
+
+      <div className="bg-black backdrop-blur-[30px] fixed w-full">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-6 flex justify-between h-[100px] items-center">
+          <div className="flex items-center gap-10 lg:gap-16">
+            <div>
+              <img src="/svgs/diagon-logo.svg" alt="diagon studio" />
+            </div>
+
+            <div className="hidden md:flex gap-5 lg:gap-8 text-white font-medium text-base lg:text-lg">
+              <Link href="" className="cursor-pointer">Whitepaper</Link>
+              <Link href="https://whitepaper.diagon.io/" target="_blank" className="cursor-pointer">Leaderboard</Link>
+              <Link href="https://www.pointstopay.io/" target="_blank" className="cursor-pointer">Shop & Refill</Link>
+            </div>
+          </div>
+
+          <button className="hidden md:flex bg-white rounded-full px-6 py-4 font-semibold">
+            Play Free Games
+          </button>
+
+          <div className="md:hidden cursor-pointer">
+            {sideNav ? (
+              <div className="transition-all duration-300" onClick={() => setSideNav(!sideNav)}>
+                <Cancel />
+              </div>
+            ) : (
+              <div className="transition-all duration-300" onClick={() => setSideNav(!sideNav)}>
+                <Hamburger />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
+

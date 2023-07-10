@@ -1,0 +1,29 @@
+.hero {
+  background: url(../../public/images/hero-bg.png);
+  background-size: cover;
+}
+
+.exp {
+  background: url(../../public/images/experience-bg.png);
+  background-size: cover;
+}
+
+.shop {
+  background: url(../../public/images/shop-bg.png);
+  background-size: cover;
+}
+
+.games {
+  background: url(../../public/images/games-bg.png);
+  background-size: cover;
+}
+
+.subscribe {
+  background: url(../../public/images/subcsribe-bg.png);
+  background-size: cover;
+}
+
+.faq {
+  background: url(../../public/images/faq-bg.png);
+  background-size: cover;
+}

@@ -1,113 +1,207 @@
-import Image from 'next/image'
+import Carousel from "@/components/Carousel/Carousel";
+import styles from "../styles/Home.module.css";
+import { Arrow } from "@/components/Svg/Svg";
+import Faq from "@/components/Faq/Faq";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-black">
+      {/* hero */}
+      <div
+        className={`h-screen w-full flex flex-col justify-center items-center px-6 md:px-6 ${styles.hero}`}
+      >
+        <div className="max-w-[1000px] text-center mx-auto mt-[100px]">
+          <h2 className="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[70px] text-white font-extrabold">
+            Play Games & Shop with your Points on the Go!
+          </h2>
+          <button className="py-4 px-8 bg-[#E20001] text-2xl rounded-full text-white font-semibold mt-10 hover:bg-opacity-80 hover:scale-95 transition-all duration-300">
+            Get Started
+          </button>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* partners */}
+      <div className="flex justify-center items-center flex-col">
+        <div className="tracking-diagon text-white text-center text-sm">
+          OUR TRUSTED PARTNERS
+        </div>
+        <div className="mt-5 flex flex-wrap justify-center gap-5">
+          <img
+            className="w-[80px] lg:w-[unset]"
+            src="/svgs/nodo.svg"
+            alt="nodo"
+          />
+          <img
+            className="w-[80px] lg:w-[unset]"
+            src="/svgs/adaverse.svg"
+            alt="adaverse"
+          />
+          <img
+            className="w-[80px] lg:w-[unset]"
+            src="/svgs/emurgo.svg"
+            alt="emurgo"
+          />
+          <img
+            className="w-[80px] lg:w-[unset]"
+            src="/svgs/techcircle.svg"
+            alt="tech circle"
+          />
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* Casual description */}
+      <div className="bg-black py-5">
+        <div className={`py-20 ${styles.exp}`}>
+          <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
+            <div className="flex-1 flex justify-center order-2 md:order-1">
+              <img src="/images/casual.png" alt="" />
+            </div>
+            <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
+              <h2 className="text-[32px] md:text-[40px] lg:text-[60px] text-white font-bold max-w-[530px]">
+                Experience a Redefined style of Casual Gaming
+              </h2>
+              <div className="text-[#776E6E] max-w-[530px] text-2xl">
+                Our arsenal of Casual Games reward players based on tickets
+                gathered.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-  )
+
+      {/* points description */}
+      <div className="bg-black py-5">
+        <div className={`py-20 ${styles.shop}`}>
+          <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
+            <div className="flex-1 flex justify-center order-2">
+              <img src="/images/points.png" alt="" />
+            </div>
+            <div className="flex-1 flex flex-col md:items-center justify-center order-1">
+              <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">
+                Shop, Top up and Pay on the GO
+              </h2>
+              <div className="text-[#776E6E] max-w-[450px] text-2xl">
+                Our arsenal of Casual Games reward players based on tickets
+                gathered.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* games description */}
+      <div className="bg-black py-5">
+        <div
+          className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
+        >
+          <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white text-center font-bold">
+            Explore More Games
+          </h2>
+          <div className="text-[#776E6E] text-center text-2xl">
+            Our arsenal of Casual Games reward players based on tickets
+            gathered.
+          </div>
+          <div className="mt-10 max-w-[1200px] mx-auto px-4 md:px-6">
+            <Carousel />
+          </div>
+          <div className="mt-10 mx-auto">
+            <button className="flex items-center gap-2 bg-[#1E1E1E] py-3 px-8 rounded-full text-white">
+              See More <Arrow />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Subscription section */}
+      <div
+        className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
+      >
+        <div className="flex justify-center flex-col md:flex-row gap-10 mx-auto">
+          <div className="flex-1">
+            <h2 className="text-[32px] sm:text-[42px] md:text-[52px] max-w-[400px] text-white font-extrabold">
+              Want to get the latest news?
+            </h2>
+          </div>
+          <div className="flex-1">
+            <div className="text-white max-w-[530px] text-2xl">
+              Subscribe to get the latest news on bonuses, promotions and
+              updates on casual gaming and shopping.
+            </div>
+            <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
+              <input
+                type="text"
+                placeholder="Enter Email address"
+                className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
+              />
+              <button className="bg-white py-2 px-5 text-sm rounded-full">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* empty image */}
+      <div className="my-20">
+        <img src="/images/extra.png" alt="" />
+      </div>
+
+      {/* Payment */}
+      <div className="max-w-[1200px] mx-auto">
+        <div className="tracking-diagon text-white text-center text-sm mb-10">
+          Payment Powered by:
+        </div>
+        <img src="/svgs/csl.svg" alt="csl" className="mx-auto" />
+        <div className="mt-10 max-w-[800px] mx-auto text-center text-2xl text-white">
+          CSL is Casual’s in-game currency with real money value to which users
+          can exchange for incentives and cash.
+        </div>
+        <div className="mt-20 max-w-[1000px] mx-auto grid sm:grid-cols-2 lg:grid-cols-3 place-content-center">
+          <div className="grid place-items-center ">
+            <img src="/svgs/subtract.svg" alt="" />
+            <div className="mt-8 text-[#484848] text-xl max-w-[300px] mx-auto text-center">
+              Play Battles games and Tournaments
+            </div>
+          </div>
+
+          <div className="grid place-items-center ">
+            <img src="/svgs/coins.svg" alt="" />
+            <div className="mt-8 text-[#484848] text-xl max-w-[300px] mx-auto text-center">
+              Win CLS as rewards
+            </div>
+          </div>
+
+          <div className="grid place-items-center ">
+            <img src="/svgs/bag.svg" alt="" />
+            <div className="mt-8 text-[#484848] text-xl max-w-[300px] mx-auto text-center">
+              Shop with CLS or Exchange for real money
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="pt-20 max-w-[1200px] flex flex-col md:flex-row mx-auto px-4 md:px-6 gap-10">
+        <div className="flex-1">
+          <div className={`max-w-[540px] mx-auto py-[70px] max-h-min  ${styles.faq}`}>
+            <div className="text-white">
+              <h3 className="md:text-[40px] font-bold text-center">
+                Frequently Asked Questions
+              </h3>
+              <p className="text-center text-xl">
+                For other questions, visit our help page
+              </p>
+              <div className="mt-10 w-[86px] h-[86px] bg-[#4C27E0] rounded-full flex justify-center items-center mx-auto font-bold text-2xl">
+                !
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-1">
+          <Faq />
+        </div>
+      </div>
+    </div>
+  );
 }
