@@ -90,7 +90,7 @@ export default function Home() {
       </div>
 
       {/* games description */}
-      <div className="bg-black py-5">
+      <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
         <div
           className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
         >
@@ -101,7 +101,7 @@ export default function Home() {
             Our arsenal of Casual Games reward players based on tickets
             gathered.
           </div>
-          <div className="mt-10 max-w-[1200px] mx-auto px-4 md:px-6">
+          <div className="mt-10 overflow-hidden">
             <Carousel />
           </div>
           <div className="mt-10 mx-auto">
@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* empty image */}
       <div className="my-20">
-        <img src="/images/extra.png" alt="" />
+        {/* <img src="/images/extra.png" alt="" /> */}
       </div>
 
       {/* Payment */}
@@ -183,7 +183,9 @@ export default function Home() {
       {/* FAQ */}
       <div className="pt-20 max-w-[1200px] flex flex-col md:flex-row mx-auto px-4 md:px-6 gap-10">
         <div className="flex-1">
-          <div className={`max-w-[540px] mx-auto py-[70px] max-h-min  ${styles.faq}`}>
+          <div
+            className={`max-w-[540px] mx-auto py-[70px] max-h-min  ${styles.faq}`}
+          >
             <div className="text-white">
               <h3 className="md:text-[40px] font-bold text-center">
                 Frequently Asked Questions

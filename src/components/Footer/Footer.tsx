@@ -224,7 +224,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="mt-8 border-t border-gray-900/10 pt-8 lg:pb-20 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+          <div className="mt-8 border-t border-gray-900/10 pt-8 flex flex-col lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col sm:flex-row justify-between gap-6 lg:order-2">
               <div className="flex gap-6 items-center">
                 {navigation.social.map((item) => (

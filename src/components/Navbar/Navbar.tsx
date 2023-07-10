@@ -6,7 +6,7 @@ import { Cancel, Hamburger } from "../Svg/Svg";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [sideNav, setSideNav] = useState(true);
+  const [sideNav, setSideNav] = useState(false);
   return (
     <>
       <SideNav {...{ sideNav, setSideNav }} />
