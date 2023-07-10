@@ -64,6 +64,14 @@ export default function Home() {
                 Our arsenal of Casual Games reward players based on tickets
                 gathered.
               </div>
+              <div className="flex gap-5 mt-10">
+                <button className="w-[40%]">
+                  <img src="/svgs/apple-btn.svg" alt="" />
+                </button>
+                <button className="w-[40%]">
+                  <img src="/svgs/playstore-btn.svg" alt="" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -77,12 +85,23 @@ export default function Home() {
               <img src="/images/points.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
+              <div>
+
+              </div>
               <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">
                 Shop, Top up and Pay on the GO
               </h2>
               <div className="text-[#776E6E] max-w-[450px] text-2xl">
                 Our arsenal of Casual Games reward players based on tickets
                 gathered.
+              </div>
+              <div className="flex gap-5 mt-10 max-w-[450px]">
+                <button className="w-[40%]">
+                  <img src="/svgs/apple-btn.svg" alt="" />
+                </button>
+                <button className="w-[40%]">
+                  <img src="/svgs/playstore-btn.svg" alt="" />
+                </button>
               </div>
             </div>
           </div>
