@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <SideNav {...{ sideNav, setSideNav }} />
 
-      <div className="bg-black backdrop-blur-[30px] fixed w-full">
+      <div className="bg-black backdrop-blur-[30px] fixed w-full z-50">
         <div className="max-w-[1200px] mx-auto px-4 md:px-6 flex justify-between h-[100px] items-center">
           <div className="flex items-center gap-10 lg:gap-16">
             <div>

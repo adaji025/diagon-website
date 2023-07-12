@@ -2,6 +2,8 @@ import Carousel from "@/components/Carousel/Carousel";
 import styles from "../styles/Home.module.css";
 import { Arrow } from "@/components/Svg/Svg";
 import Faq from "@/components/Faq/Faq";
+import PointsTimeline from "@/components/Timeline/PointsTimeline";
+import CasualTimeline from "@/components/Timeline/CasualTimeline";
 
 export default function Home() {
   return (
@@ -57,13 +59,14 @@ export default function Home() {
               <img src="/images/casual.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
-              <h2 className="text-[32px] md:text-[40px] lg:text-[60px] text-white font-bold max-w-[530px]">
+              {/* <h2 className="text-[32px] md:text-[40px] lg:text-[60px] text-white font-bold max-w-[530px]">
                 Experience a Redefined style of Casual Gaming
               </h2>
               <div className="text-[#776E6E] max-w-[530px] text-2xl">
                 Our arsenal of Casual Games reward players based on tickets
                 gathered.
-              </div>
+              </div> */}
+              <CasualTimeline />
               <div className="flex gap-5 mt-10">
                 <button className="w-[40%]">
                   <img src="/svgs/apple-btn.svg" alt="" />
@@ -85,16 +88,14 @@ export default function Home() {
               <img src="/images/points.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
-              <div>
-
-              </div>
-              <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">
+              {/* <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">
                 Shop, Top up and Pay on the GO
               </h2>
               <div className="text-[#776E6E] max-w-[450px] text-2xl">
                 Our arsenal of Casual Games reward players based on tickets
                 gathered.
-              </div>
+              </div> */}
+              <PointsTimeline />
               <div className="flex gap-5 mt-10 max-w-[450px]">
                 <button className="w-[40%]">
                   <img src="/svgs/apple-btn.svg" alt="" />
