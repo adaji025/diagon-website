@@ -56,7 +56,7 @@ export default function Home() {
         <div className={`py-20 ${styles.exp}`}>
           <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
             <div className="flex-1 flex justify-center order-2 md:order-1">
-              <img src="/images/casual.png" alt="" />
+              <img src="/image/casual.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
               {/* <h2 className="text-[32px] md:text-[40px] lg:text-[60px] text-white font-bold max-w-[530px]">
@@ -85,7 +85,7 @@ export default function Home() {
         <div className={`py-20 ${styles.shop}`}>
           <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
             <div className="flex-1 flex justify-center order-2">
-              <img src="/images/points.png" alt="" />
+              <img src="/image/points.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
               {/* <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">

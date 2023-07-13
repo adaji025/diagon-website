@@ -42,11 +42,11 @@ const Carousel = () => {
   };
 
   const slides = [
-    "/images/protector.png",
-    "/images/checker.png",
-    "/images/protector.png",
-    "/images/checker.png",
-    "/images/checker.png",
+    "/image/protector.png",
+    "/image/checker.png",
+    "/image/protector.png",
+    "/image/checker.png",
+    "/image/checker.png",
   ];
 
   return (
