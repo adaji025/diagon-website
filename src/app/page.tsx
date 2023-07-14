@@ -10,7 +10,7 @@ export default function Home() {
     <div className="bg-black">
       {/* hero */}
       <div
-        className={`h-screen w-full flex flex-col justify-center items-center px-6 md:px-6 ${styles.hero}`}
+        className={`h-[80vh] w-full flex flex-col justify-center items-center px-6 md:px-6 ${styles.hero}`}
       >
         <div className="max-w-[1000px] text-center mx-auto mt-[100px]">
           <h2 className="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[70px] text-white font-extrabold">
