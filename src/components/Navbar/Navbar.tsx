@@ -19,8 +19,8 @@ const Navbar = () => {
             </div>
 
             <div className="hidden md:flex gap-5 lg:gap-8 text-white font-medium text-base lg:text-lg">
-              <Link href="" className="cursor-pointer">Whitepaper</Link>
-              <Link href="https://whitepaper.diagon.io/" target="_blank" className="cursor-pointer">Leaderboard</Link>
+              <Link href="https://whitepaper.diagon.io/" className="cursor-pointer">Whitepaper</Link>
+              <Link href="/leadersboard" target="_blank" className="cursor-pointer">Leaderboard</Link>
               <Link href="https://www.pointstopay.io/" target="_blank" className="cursor-pointer">Shop & Refill</Link>
             </div>
           </div>

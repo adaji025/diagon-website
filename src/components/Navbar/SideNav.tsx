@@ -14,11 +14,11 @@ const SideNav = ({ sideNav, setSideNav }: Props) => {
       }`}
     >
       <div className="grid gap-5 lg:gap-8 text-white font-medium text-base lg:text-lg text-center mt-5">
-        <Link href="" className="cursor-pointer">
+        <Link href="https://whitepaper.diagon.io/" className="cursor-pointer">
           Whitepaper
         </Link>
         <Link
-          href="https://whitepaper.diagon.io/"
+          href="/leadersboard"
           target="_blank"
           className="cursor-pointer"
         >
