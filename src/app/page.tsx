@@ -74,7 +74,8 @@ export default function Home() {
                     ? "/image/casual-3.png"
                     : "/image/casual.png"
                 }
-                alt=""
+                alt="casual"
+                className="transition-all duration-300"
               />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
@@ -170,7 +171,7 @@ export default function Home() {
 
       {/* empty image */}
       <div className="my-20">
-        {/* <img src="/images/extra.png" alt="" /> */}
+        <img src="/image/extra.png" alt="" />
       </div>
 
       {/* Payment */}

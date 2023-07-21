@@ -77,7 +77,7 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({backgroundDivIndex, setB
   }, [scrollPosition]);
 
   return (
-    <div className={`text-white ${styles.timeline_container}`}>
+    <div className={`text-white  ${styles.timeline_container}`}>
       <AnimateIn className="">
         <div
           ref={CreateDivRef(0)}
