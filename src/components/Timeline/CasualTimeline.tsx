@@ -3,11 +3,14 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "../../styles/CasualTimeline.module.css";
 import { AnimateIn } from "../AnimateScreen";
 
-const CasualTimeline = () => {
+type CasualTimelineProps = {
+  backgroundDivIndex: number | null
+  setBackgroundDivIndex : Function
+}
+
+const CasualTimeline: React.FC<CasualTimelineProps> = ({backgroundDivIndex, setBackgroundDivIndex}) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const [backgroundDivIndex, setBackgroundDivIndex] = useState<number | null>(
-    null
-  );
+  
 
   const divRefs: React.RefObject<HTMLDivElement>[] = [];
 
@@ -67,7 +70,7 @@ const CasualTimeline = () => {
 
     // Update the background div index state with a slight delay
     setTimeout(() => {
-      setBackgroundDivIndex((prevIndex) =>
+      setBackgroundDivIndex((prevIndex: number) =>
         newIndex !== null ? newIndex : prevIndex
       );
     }, 200); // Adjust the delay duration as needed
@@ -78,22 +81,22 @@ const CasualTimeline = () => {
       <AnimateIn className="">
         <div
           ref={CreateDivRef(0)}
-          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${styles.timeline_item} ${
             backgroundDivIndex === 0 ? "background-in-view" : ""
           }`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Game your way to fun and rewards</p>
           <span className={`circle  ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
         <div
           ref={CreateDivRef(1)}
-          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
             backgroundDivIndex === 1 ? "background-in-view" : ""
           }`}
         >
-          <p>Experience a Redefined style of Casual Gaming 1</p>
+          <p>Upgrade your gaming rig and build your ranks</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
@@ -101,33 +104,33 @@ const CasualTimeline = () => {
       <AnimateIn className="">
         <div
           ref={CreateDivRef(2)}
-          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
             backgroundDivIndex === 2 ? "background-in-view" : ""
           }`}
         >
-          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <p>Play games, gather Points, Win big</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
         <div
           ref={CreateDivRef(3)}
-          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
             backgroundDivIndex === 3 ? "background-in-view" : ""
           }`}
         >
-          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <p>Compete with friends and top the leaderboard</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
         <div
           ref={CreateDivRef(4)}
-          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
             backgroundDivIndex === 4 ? "background-in-view" : ""
           }`}
         >
-          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <p>Etch your gaming milestones on CASUAL</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>

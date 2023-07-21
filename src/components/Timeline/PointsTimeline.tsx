@@ -25,7 +25,7 @@ const PointsTimeline = () => {
     <div className={`text-white ${styles.timeline_container}`}>
       {timelineData.map((data, index) => (
         <AnimateIn
-          className={`py-3 pl-10 pr-5 w-[80%] ${
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
             onScreen ?  styles.timeline_item : ""
           }`}
           key={index}

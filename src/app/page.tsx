@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import styles from "../styles/Home.module.css";
 import { Arrow } from "@/components/Svg/Svg";
@@ -6,6 +9,9 @@ import PointsTimeline from "@/components/Timeline/PointsTimeline";
 import CasualTimeline from "@/components/Timeline/CasualTimeline";
 
 export default function Home() {
+  const [backgroundDivIndex, setBackgroundDivIndex] = useState<number | null>(
+    null
+  );
   return (
     <div className="bg-black">
       {/* hero */}
@@ -56,17 +62,25 @@ export default function Home() {
         <div className={`py-20 ${styles.exp}`}>
           <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
             <div className="flex-1 flex justify-center order-2 md:order-1">
-              <img src="/image/casual.png" alt="" />
+              <img
+                src={
+                  backgroundDivIndex === 0
+                    ? "/image/casual.png"
+                    : backgroundDivIndex === 1
+                    ? "/image/casual-1.png"
+                    : backgroundDivIndex === 2
+                    ? "/image/casual-2.png"
+                    : backgroundDivIndex === 3
+                    ? "/image/casual-3.png"
+                    : "/image/casual.png"
+                }
+                alt=""
+              />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
-              {/* <h2 className="text-[32px] md:text-[40px] lg:text-[60px] text-white font-bold max-w-[530px]">
-                Experience a Redefined style of Casual Gaming
-              </h2>
-              <div className="text-[#776E6E] max-w-[530px] text-2xl">
-                Our arsenal of Casual Games reward players based on tickets
-                gathered.
-              </div> */}
-              <CasualTimeline />
+              <CasualTimeline
+                {...{ backgroundDivIndex, setBackgroundDivIndex }}
+              />
               <div className="flex gap-5 mt-10">
                 <button className="w-[40%]">
                   <img src="/svgs/apple-btn.svg" alt="" />
@@ -88,13 +102,6 @@ export default function Home() {
               <img src="/image/points.png" alt="" />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
-              {/* <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white font-bold max-w-[450px]">
-                Shop, Top up and Pay on the GO
-              </h2>
-              <div className="text-[#776E6E] max-w-[450px] text-2xl">
-                Our arsenal of Casual Games reward players based on tickets
-                gathered.
-              </div> */}
               <PointsTimeline />
               <div className="flex gap-5 mt-10 max-w-[450px]">
                 <button className="w-[40%]">
