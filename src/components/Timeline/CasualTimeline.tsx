@@ -12,7 +12,7 @@ const CasualTimeline = () => {
   const divRefs: React.RefObject<HTMLDivElement>[] = [];
 
   // Create refs for each div element
-  const createDivRef = (index: number): React.RefObject<HTMLDivElement> => {
+  const CreateDivRef = (index: number): React.RefObject<HTMLDivElement> => {
     const ref = useRef<HTMLDivElement>(null);
     divRefs[index] = ref;
     return ref;
@@ -77,7 +77,7 @@ const CasualTimeline = () => {
     <div className={`text-white ${styles.timeline_container}`}>
       <AnimateIn className="">
         <div
-          ref={createDivRef(0)}
+          ref={CreateDivRef(0)}
           className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
             backgroundDivIndex === 0 ? "background-in-view" : ""
           }`}
@@ -88,7 +88,7 @@ const CasualTimeline = () => {
       </AnimateIn>
       <AnimateIn className="">
         <div
-          ref={createDivRef(1)}
+          ref={CreateDivRef(1)}
           className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
             backgroundDivIndex === 1 ? "background-in-view" : ""
           }`}
@@ -100,7 +100,7 @@ const CasualTimeline = () => {
 
       <AnimateIn className="">
         <div
-          ref={createDivRef(2)}
+          ref={CreateDivRef(2)}
           className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
             backgroundDivIndex === 2 ? "background-in-view" : ""
           }`}
@@ -111,7 +111,7 @@ const CasualTimeline = () => {
       </AnimateIn>
       <AnimateIn className="">
         <div
-          ref={createDivRef(3)}
+          ref={CreateDivRef(3)}
           className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
             backgroundDivIndex === 3 ? "background-in-view" : ""
           }`}
@@ -122,7 +122,7 @@ const CasualTimeline = () => {
       </AnimateIn>
       <AnimateIn className="">
         <div
-          ref={createDivRef(4)}
+          ref={CreateDivRef(4)}
           className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
             backgroundDivIndex === 4 ? "background-in-view" : ""
           }`}
