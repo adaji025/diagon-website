@@ -1,62 +1,136 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../../styles/CasualTimeline.module.css";
+import { AnimateIn } from "../AnimateScreen";
 
 const CasualTimeline = () => {
-  const animationRef = React.useRef<HTMLDivElement>(null);
-  
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [backgroundDivIndex, setBackgroundDivIndex] = useState<number | null>(
+    null
+  );
 
-  console.log(animationRef.current);
+  const divRefs: React.RefObject<HTMLDivElement>[] = [];
 
-  React.useEffect(() => {
-    
-    const handleScroll = () => {
-      const element = animationRef.current;
-      if (isElementInViewport(element)) {
-        element?.classList.add(styles.timeline_item);
-      } else {
-        element?.classList.remove(styles.timeline_item);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isElementInViewport = (el: HTMLDivElement | null): boolean => {
-    if (!el) return false;
-
-    const trigerBottom = (window.innerHeight / 5) * 4;
-
-    const rect = el.getBoundingClientRect();
-    return rect.top < trigerBottom;
+  // Create refs for each div element
+  const createDivRef = (index: number): React.RefObject<HTMLDivElement> => {
+    const ref = useRef<HTMLDivElement>(null);
+    divRefs[index] = ref;
+    return ref;
   };
 
-  const timelineData = [
-    "Experience a Redefined style of Casual Gaming",
-    "Experience a Redefined style of Casual Gaming",
-    "Experience a Redefined style of Casual Gaming",
-    "Experience a Redefined style of Casual Gaming",
-    "Experience a Redefined style of Casual Gaming",
-    "Experience a Redefined style of Casual Gaming",
-  ];
+  // Function to get the top position of each div element
+  const getTopPositions = () => {
+    const topPositions = divRefs.map((ref) => {
+      if (ref.current) {
+        return ref.current.getBoundingClientRect().top;
+      }
+      return null;
+    });
+    return topPositions;
+  };
+
+  useEffect(() => {
+    // Update the scroll position in the state on scroll
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Get the top positions of each div element
+    const topPositions = getTopPositions();
+
+    // Determine which div should have the background with a slight delay
+    let newIndex: number | null = null;
+    for (let i = 0; i < topPositions.length; i++) {
+      if (topPositions[i] !== null) {
+        const element = divRefs[i].current;
+        if (element) {
+          const isTopInView =
+            // @ts-ignore
+            topPositions[i] - window.innerHeight + element.clientHeight <
+            scrollPosition;
+          // @ts-ignore
+          const isBottomInView = topPositions[i] > scrollPosition;
+          if (isTopInView && isBottomInView) {
+            newIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // Update the background div index state with a slight delay
+    setTimeout(() => {
+      setBackgroundDivIndex((prevIndex) =>
+        newIndex !== null ? newIndex : prevIndex
+      );
+    }, 200); // Adjust the delay duration as needed
+  }, [scrollPosition]);
 
   return (
     <div className={`text-white ${styles.timeline_container}`}>
-      {timelineData.map((data, index) => (
+      <AnimateIn className="">
         <div
-          ref={animationRef}
-          className={`py-3 pl-10 pr-5 w-[80%]
-           ${
-            index === 0 ? styles.timeline_item : ""
-            }
-          `}
-          key={index}
+          ref={createDivRef(0)}
+          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+            backgroundDivIndex === 0 ? "background-in-view" : ""
+          }`}
         >
-          <p>{data}</p>
-          <span ref={animationRef} className={`${index === 0 ? styles.casual_circle : ""}`} />
+          <p>Experience a Redefined style of Casual Gaming</p>
+          <span className={`circle  ${styles.casual_circle}`} />
         </div>
-      ))}
+      </AnimateIn>
+      <AnimateIn className="">
+        <div
+          ref={createDivRef(1)}
+          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+            backgroundDivIndex === 1 ? "background-in-view" : ""
+          }`}
+        >
+          <p>Experience a Redefined style of Casual Gaming 1</p>
+          <span className={`circle ${styles.casual_circle}`} />
+        </div>
+      </AnimateIn>
+
+      <AnimateIn className="">
+        <div
+          ref={createDivRef(2)}
+          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+            backgroundDivIndex === 2 ? "background-in-view" : ""
+          }`}
+        >
+          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <span className={`circle ${styles.casual_circle}`} />
+        </div>
+      </AnimateIn>
+      <AnimateIn className="">
+        <div
+          ref={createDivRef(3)}
+          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+            backgroundDivIndex === 3 ? "background-in-view" : ""
+          }`}
+        >
+          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <span className={`circle ${styles.casual_circle}`} />
+        </div>
+      </AnimateIn>
+      <AnimateIn className="">
+        <div
+          ref={createDivRef(4)}
+          className={`py-3 pl-10 pr-5 w-[80%] ${styles.timeline_item} ${
+            backgroundDivIndex === 4 ? "background-in-view" : ""
+          }`}
+        >
+          <p>Experience a Redefined style of Casual Gaming 2</p>
+          <span className={`circle ${styles.casual_circle}`} />
+        </div>
+      </AnimateIn>
     </div>
   );
 };

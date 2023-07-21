@@ -2,4 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.background-in-view {
+  background: linear-gradient(280deg, #9d0101 0%, rgba(199, 14, 14, 0) 100%);
+  transition: background-color 0.7s 0.5s ease-in-out !important;
+}
 
+.background-in-view::after {
+  background-color: #242929;
+  content: "";
+  position: absolute;
+  right: -20%;
+  top: 25px;
+  width: 20%;
+  height: 4px;
+}
+
+.background-in-view .circle {
+  background: url(../../public/svgs/casual-circle.svg);
+  background-position: center;
+  background-size: cover;
+}
