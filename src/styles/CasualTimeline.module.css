@@ -19,18 +19,7 @@
   position: relative;
   margin: 10px 0;
   border-radius: 0px 10px 10px 0px;
-
 }
-
-/* .timeline_item:after {
-  background-color: #242929;
-  content: "";
-  position: absolute;
-  right: -20%;
-  top: 25px;
-  width: 20%;
-  height: 4px;
-} */
 
 .casual_circle {
   border-radius: 50%;

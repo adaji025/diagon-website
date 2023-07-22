@@ -19,23 +19,10 @@
   position: relative;
   margin: 10px 0;
   border-radius: 0px 10px 10px 0px;
-  background: linear-gradient(280deg, #143837 0%, rgba(34, 94, 90, 0) 100%);
 }
 
-.timeline_item:first-child:after {
-    background-color: #242929;
-    content: "";
-    position: absolute;
-    right: -20%;
-    top: 25px;
-    width:20% ;
-    height: 4px;
-}
 
 .points_circle {
-  background: url(../../public/svgs/point-circle.svg);
-  background-position: center;
-  background-size: cover;
   border-radius: 50%;
   position: absolute;
   top: calc(50% - 30px);
@@ -44,4 +31,3 @@
   height: 40px;
   z-index: 40;
 }
-
