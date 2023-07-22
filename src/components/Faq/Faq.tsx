@@ -5,33 +5,39 @@ import { MinusSmallIcon, PlusSmallIcon } from "../Svg/Svg";
 
 const faqs = [
   {
-    question: "What is CLS?",
-    answer: `CLS is a leading crypto e-commerce store that allows users to Shop,
-    Pay with Crypto and get rewarded for shopping by purchasing digital gift
-    cards and phone refills with Bitcoin or crypto. We also offer bill payment in
-    specific countries and plan to expand this service to more countries in the 
-    future.`,
+    question: "How do I get started on DIAGON?",
+    answer: `Download CASUAL on your Android or iOS device, play casual games
+    to gather points, and shop with points gathered from your play.
+    `,
   },
 
   {
-    question: "Which cryptocurrencies do you support?",
-    answer:
-      "With Points you can purchase gift cards using a variety of cryptocurrencies including Bitcoin, Lightning, Ethereum, USDC, USDT, Binance Pay, Litecoin, Dogecoin or Dash.",
+    question: "What is CASUAL?",
+    answer: `CASUAL by Diagon is a social gaming application where Gamers play
+     online games and gather points for mobile top ups at discounted
+     prices, online subscriptions and much more.`,
   },
   {
-    question: "Which wallets or crypto exchanges do you support?",
-    answer:
-      "With Points you can purchase gift cards using a variety of cryptocurrencies including Bitcoin, Lightning, Ethereum, USDC, USDT, Binance Pay, Litecoin, Dogecoin or Dash.",
+    question: " What is CSL",
+    answer: `CSL is the in-App currency in the CASUAL App. It's introduced to
+    provide a virtual medium of exchange in CASUAL.`
   },
   {
     question: "How do I convert CLS Token to Cash?",
-    answer:
-      "With Points you can purchase gift cards using a variety of cryptocurrencies including Bitcoin, Lightning, Ethereum, USDC, USDT, Binance Pay, Litecoin, Dogecoin or Dash.",
+    answer: `Play games to gather a minimum of 100,00 points and proceed to your
+    in-App CSL wallet to convert points.`
   },
   {
-    question: "Does POINTS have a rewards program?",
-    answer:
-      "With Points you can purchase gift cards using a variety of cryptocurrencies including Bitcoin, Lightning, Ethereum, USDC, USDT, Binance Pay, Litecoin, Dogecoin or Dash.",
+    question: "Can I buy CSL?",
+    answer: `Yes. You can buy CSL with real money, and use it to unlock premium
+    features, purchase giftcards and international top ups at discounted
+    prices and much more`
+  },
+  {
+    question: "Can I use regular currency for payments on CASUAL?",
+    answer: `Yes. We recognize the need for flexibility. You can choose to use
+    traditional currency in your Naira Wallet based on your preference.
+    `
   },
 ];
 

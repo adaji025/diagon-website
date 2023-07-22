@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import styles from "../styles/Home.module.css";
 import { Arrow } from "@/components/Svg/Svg";
@@ -6,6 +9,27 @@ import PointsComponent from "@/components/PointsComponent";
 import CasualComponent from "@/components/CasualComponent";
 
 export default function Home() {
+  const casualComponentRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (casualComponentRef.current) {
+        const rect = casualComponentRef.current.getBoundingClientRect();
+        const isInViewport = rect.bottom >= 0 && rect.top <= window.innerHeight;
+        setIsVisible(isInViewport);
+      }
+    };
+
+    // Add event listener to check if the component is in the viewport on scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="bg-black">
       {/* hero */}
@@ -52,7 +76,11 @@ export default function Home() {
       </div>
 
       {/* Casual description */}
-      <CasualComponent />
+      
+        <div ref={casualComponentRef}>
+          <CasualComponent />
+        </div>
+    
 
       {/* points description */}
       <PointsComponent />

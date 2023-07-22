@@ -84,7 +84,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 0 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Winning is just the beginning - Shop with your points!</p>
           <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
@@ -95,7 +95,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 1 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Explore the better way to shop with Points</p>
           <span className={`circle" ${styles.points_circle}`} />
         </div>
       </AnimateIn>
@@ -106,7 +106,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 2 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Mobile Top ups, online subscriptions, and more with Points! </p>
           <span className={`circle" ${styles.points_circle}`} />
         </div>
       </AnimateIn>
@@ -117,7 +117,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 3 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Transform your gaming prowess to real assets!</p>
           <span className={`circle" ${styles.points_circle}`} />
         </div>
       </AnimateIn>
@@ -128,7 +128,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 4 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Unlock premium rewards and more with CSL</p>
           <span className={`circle" ${styles.points_circle}`} />
         </div>
       </AnimateIn>
@@ -139,7 +139,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
             styles.timeline_item
           } ${backgroundDivIndex === 5 ? "background_in_view" : ""}`}
         >
-          <p>Experience a Redefined style of Casual Gaming</p>
+          <p>Play harder, Shop better. Experience the ease with Points!</p>
           <span className={`circle" ${styles.points_circle}`} />
         </div>
       </AnimateIn>
