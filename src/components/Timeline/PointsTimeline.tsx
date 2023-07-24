@@ -96,7 +96,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           } ${backgroundDivIndex === 1 ? "background_in_view" : ""}`}
         >
           <p>Explore the better way to shop with Points</p>
-          <span className={`circle" ${styles.points_circle}`} />
+          <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
@@ -107,7 +107,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           } ${backgroundDivIndex === 2 ? "background_in_view" : ""}`}
         >
           <p>Mobile Top ups, online subscriptions, and more with Points! </p>
-          <span className={`circle" ${styles.points_circle}`} />
+          <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
@@ -118,7 +118,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           } ${backgroundDivIndex === 3 ? "background_in_view" : ""}`}
         >
           <p>Transform your gaming prowess to real assets!</p>
-          <span className={`circle" ${styles.points_circle}`} />
+          <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
@@ -129,7 +129,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           } ${backgroundDivIndex === 4 ? "background_in_view" : ""}`}
         >
           <p>Unlock premium rewards and more with CSL</p>
-          <span className={`circle" ${styles.points_circle}`} />
+          <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
       <AnimateIn className="">
@@ -140,7 +140,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           } ${backgroundDivIndex === 5 ? "background_in_view" : ""}`}
         >
           <p>Play harder, Shop better. Experience the ease with Points!</p>
-          <span className={`circle" ${styles.points_circle}`} />
+          <span className={`circle ${styles.points_circle}`} />
         </div>
       </AnimateIn>
     </div>

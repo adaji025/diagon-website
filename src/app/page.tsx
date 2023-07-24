@@ -7,29 +7,9 @@ import { Arrow } from "@/components/Svg/Svg";
 import Faq from "@/components/Faq/Faq";
 import PointsComponent from "@/components/PointsComponent";
 import CasualComponent from "@/components/CasualComponent";
+import { AnimateIn } from "@/components/AnimateScreen";
 
 export default function Home() {
-  const casualComponentRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (casualComponentRef.current) {
-        const rect = casualComponentRef.current.getBoundingClientRect();
-        const isInViewport = rect.bottom >= 0 && rect.top <= window.innerHeight;
-        setIsVisible(isInViewport);
-      }
-    };
-
-    // Add event listener to check if the component is in the viewport on scroll
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div className="bg-black">
       {/* hero */}
@@ -76,66 +56,70 @@ export default function Home() {
       </div>
 
       {/* Casual description */}
-      
-        <div ref={casualComponentRef}>
-          <CasualComponent />
-        </div>
-    
+      <AnimateIn className="">
+        <CasualComponent />
+      </AnimateIn>
 
       {/* points description */}
-      <PointsComponent />
+      <AnimateIn className="">
+        <PointsComponent />
+      </AnimateIn>
 
       {/* games description */}
-      <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
-        <div
-          className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
-        >
-          <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white text-center font-bold">
-            Explore More Games
-          </h2>
-          <div className="text-[#776E6E] text-center text-2xl">
-            Our arsenal of Casual Games reward players based on tickets
-            gathered.
-          </div>
-          <div className="mt-10 overflow-hidden">
-            <Carousel />
-          </div>
-          <div className="mt-10 mx-auto">
-            <button className="flex items-center gap-2 bg-[#1E1E1E] py-3 px-8 rounded-full text-white">
-              See More <Arrow />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Subscription section */}
-      <div
-        className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
-      >
-        <div className="flex justify-center flex-col md:flex-row gap-10 mx-auto">
-          <div className="flex-1">
-            <h2 className="text-[32px] sm:text-[42px] md:text-[52px] max-w-[400px] text-white font-extrabold">
-              Want to get the latest news?
+      <AnimateIn className="">
+        <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
+          <div
+            className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
+          >
+            <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white text-center font-bold">
+              Explore More Games
             </h2>
-          </div>
-          <div className="flex-1">
-            <div className="text-white max-w-[530px] text-2xl">
-              Subscribe to get the latest news on bonuses, promotions and
-              updates on casual gaming and shopping.
+            <div className="text-[#776E6E] text-center text-2xl">
+              Our arsenal of Casual Games reward players based on tickets
+              gathered.
             </div>
-            <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
-              <input
-                type="text"
-                placeholder="Enter Email address"
-                className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
-              />
-              <button className="bg-white py-2 px-5 text-sm rounded-full">
-                Subscribe
+            <div className="mt-10 overflow-hidden">
+              <Carousel />
+            </div>
+            <div className="mt-10 mx-auto">
+              <button className="flex items-center gap-2 bg-[#1E1E1E] py-3 px-8 rounded-full text-white">
+                See More <Arrow />
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </AnimateIn>
+
+      {/* Subscription section */}
+      <AnimateIn className="">
+        <div
+          className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
+        >
+          <div className="flex justify-center flex-col md:flex-row gap-10 mx-auto">
+            <div className="flex-1">
+              <h2 className="text-[32px] sm:text-[42px] md:text-[52px] max-w-[400px] text-white font-extrabold">
+                Want to get the latest news?
+              </h2>
+            </div>
+            <div className="flex-1">
+              <div className="text-white max-w-[530px] text-2xl">
+                Subscribe to get the latest news on bonuses, promotions and
+                updates on casual gaming and shopping.
+              </div>
+              <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
+                <input
+                  type="text"
+                  placeholder="Enter Email address"
+                  className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
+                />
+                <button className="bg-white py-2 px-5 text-sm rounded-full">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimateIn>
 
       {/* empty image */}
       <div className="my-20">
