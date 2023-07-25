@@ -13,6 +13,8 @@ export default function Home() {
   const [backgroundDivIndex, setBackgroundDivIndex] = useState<number | null>(
     null
   );
+  const [activeDivId, setActiveDivId] = useState<string | null>(null);
+
   return (
     <div className="bg-black">
       {/* hero */}
@@ -103,15 +105,15 @@ export default function Home() {
             <div className="flex-1 flex justify-center order-2">
               <img
                 src={
-                  backgroundDivIndex === 0
+                  activeDivId === "div1"
                     ? "/image/points.png"
-                    : backgroundDivIndex === 1
+                    : activeDivId === "div2"
                     ? "/image/points-1.png"
-                    : backgroundDivIndex === 2
+                    : activeDivId === "div3"
                     ? "/image/points-2.png"
-                    : backgroundDivIndex === 3
+                    : activeDivId === "div4"
                     ? "/image/points-3.png"
-                    : backgroundDivIndex === 4
+                    : activeDivId === "div5"
                     ? "/image/points-4.png"
                     : "/image/points-5.png"
                 }
@@ -119,9 +121,7 @@ export default function Home() {
               />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
-              <PointsTimeline
-                {...{backgroundDivIndex, setBackgroundDivIndex }}
-              />
+              <PointsTimeline {...{ activeDivId, setActiveDivId }} />
               <div className="flex gap-5 mt-10 max-w-[450px]">
                 <button className="w-[40%]">
                   <img src="/svgs/apple-btn.svg" alt="" />

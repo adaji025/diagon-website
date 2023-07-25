@@ -42,3 +42,7 @@
   background-position: center;
   background-size: cover;
 }
+
+.background_in_view_empty {
+  background: none !important;
+}

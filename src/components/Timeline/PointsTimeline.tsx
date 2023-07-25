@@ -2,146 +2,163 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "../../styles/PointsTimeline.module.css";
 import { AnimateIn } from "../AnimateScreen";
+import Bg from "../../../public/svgs/point-circle.svg";
 
 type PointTimelineProps = {
-  backgroundDivIndex: number | null;
-  setBackgroundDivIndex: Function;
+  activeDivId: string | null;
+  setActiveDivId: Function;
 };
 
 const PointsTimeline: FC<PointTimelineProps> = ({
-  backgroundDivIndex,
-  setBackgroundDivIndex,
+  activeDivId,
+  setActiveDivId,
 }) => {
-  const [pointsscrollPosition, setPointsScrollPosition] = useState<number>(4);
-  const divRefs: React.RefObject<HTMLDivElement>[] = [];
-
-  const CreateDivRef = (index: number): React.RefObject<HTMLDivElement> => {
-    const ref = useRef<HTMLDivElement>(null);
-    divRefs[index] = ref;
-    return ref;
-  };
-
-  const getTopPositions = () => {
-    const topPositions = divRefs.map((ref) => {
-      if (ref.current) {
-        return ref.current.getBoundingClientRect().top;
-      }
-      return null;
-    });
-    return topPositions;
-  };
-
   useEffect(() => {
-    // Update the scroll position in the state on scroll
     const handleScroll = () => {
-      setPointsScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
+      const divElements = document.querySelectorAll(".scroll-div");
+      let activeDiv: string | null = null;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      divElements.forEach((divElement) => {
+        const { top, bottom } = divElement.getBoundingClientRect();
+        const isInView = top >= 0 && bottom <= window.innerHeight;
 
-  useEffect(() => {
-    // Get the top positions of each div element
-    const topPositions = getTopPositions();
-
-    // Determine which div should have the background with a slight delay
-    let newIndex: number | null = null;
-    for (let i = 0; i < topPositions.length; i++) {
-      if (topPositions[i] !== null) {
-        const element = divRefs[i].current;
-        if (element) {
-          const isTopInView =
-            // @ts-ignore
-            topPositions[i] - window.innerHeight + element.clientHeight <
-            pointsscrollPosition;
-          // @ts-ignore
-          const isBottomInView = topPositions[i] > pointsscrollPosition;
-          if (isTopInView && isBottomInView) {
-            newIndex = i;
-            break;
-          }
+        if (isInView) {
+          activeDiv = divElement.id;
         }
-      }
-    }
+      });
 
-    // Update the background div index state with a slight delay
-    setTimeout(() => {
-      setBackgroundDivIndex((prevIndex: number) =>
-        newIndex !== null ? newIndex : prevIndex
-      );
-    }, 200); // Adjust the delay duration as needed
-  }, [pointsscrollPosition]);
+      setActiveDivId(activeDiv);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeDivId]);
+
+  console.log("activeDiv ==>", activeDivId);
+
+  const CircleStylesObject = {
+    background: `url("/svgs/point-circle.svg")`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  };
+
+  const TimelineItemStylesObject = {
+    background: "linear-gradient(280deg, #143837 0%, rgba(34, 94, 90, 0) 100%)",
+  };
 
   return (
     <div className={`text-white ${styles.timeline_container}`}>
-      <AnimateIn className="">
+      <AnimateIn className="flex items-center">
         <div
-          ref={CreateDivRef(0)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 0 ? "background_in_view" : ""}`}
+          id="div1"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div  ${styles.timeline_item} `}
+          style={activeDivId === "div1" ? TimelineItemStylesObject : {}}
         >
           <p>Winning is just the beginning - Shop with your points!</p>
-          <span className={`circle ${styles.points_circle}`} />
+          <span
+            className={`circle ${styles.points_circle}`}
+            style={activeDivId === "div1" ? CircleStylesObject : {}}
+          />
         </div>
-      </AnimateIn>
-      <AnimateIn className="">
         <div
-          ref={CreateDivRef(1)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 1 ? "background_in_view" : ""}`}
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div1" && "bg-[#242929]"
+          }`}
+        />
+      </AnimateIn>
+      <AnimateIn className="flex items-center">
+        <div
+          id="div2"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeDivId === "div2" ? TimelineItemStylesObject : {}}
         >
           <p>Explore the better way to shop with Points</p>
-          <span className={`circle ${styles.points_circle}`} />
+          <span
+            className={`circle ${styles.points_circle}`}
+            style={activeDivId === "div2" ? CircleStylesObject : {}}
+          />
         </div>
-      </AnimateIn>
-      <AnimateIn className="">
         <div
-          ref={CreateDivRef(2)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 2 ? "background_in_view" : ""}`}
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div2" && "bg-[#242929]"
+          }`}
+        />
+      </AnimateIn>
+
+      <AnimateIn className="flex items-center">
+        <div
+          id="div3"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeDivId === "div3" ? TimelineItemStylesObject : {}}
         >
-          <p>Mobile Top ups, online subscriptions, and more with Points! </p>
-          <span className={`circle ${styles.points_circle}`} />
+          <p>Mobile Top ups, online subsc3iptions, and more with Points! </p>
+          <span
+            className={`circle ${styles.points_circle}`}
+            style={activeDivId === "div3" ? CircleStylesObject : {}}
+          />
         </div>
-      </AnimateIn>
-      <AnimateIn className="">
         <div
-          ref={CreateDivRef(3)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 3 ? "background_in_view" : ""}`}
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div3" && "bg-[#242929]"
+          }`}
+        />
+      </AnimateIn>
+
+      <AnimateIn className="flex items-center">
+        <div
+          id="div4"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeDivId === "div4" ? TimelineItemStylesObject : {}}
         >
           <p>Transform your gaming prowess to real assets!</p>
-          <span className={`circle ${styles.points_circle}`} />
+          <span
+            className={`circle ${styles.points_circle}`}
+            style={activeDivId === "div4" ? CircleStylesObject : {}}
+          />
         </div>
-      </AnimateIn>
-      <AnimateIn className="">
         <div
-          ref={CreateDivRef(4)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 4 ? "background_in_view" : ""}`}
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div4" && "bg-[#242929]"
+          }`}
+        />
+      </AnimateIn>
+
+      <AnimateIn className="flex items-center">
+        <div
+          id="div5"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeDivId === "div5" ? TimelineItemStylesObject : {}}
         >
           <p>Unlock premium rewards and more with CSL</p>
-          <span className={`circle ${styles.points_circle}`} />
+          <span
+            className={`circle ${styles.points_circle}`}
+            style={activeDivId === "div5" ? CircleStylesObject : {}}
+          />
         </div>
-      </AnimateIn>
-      <AnimateIn className="">
         <div
-          ref={CreateDivRef(5)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${
-            styles.timeline_item
-          } ${backgroundDivIndex === 5 ? "background_in_view" : ""}`}
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div5" && "bg-[#242929]"
+          }`}
+        />
+      </AnimateIn>
+
+      <AnimateIn className="flex items-center">
+        <div
+          id="div6"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeDivId === "div6" ? TimelineItemStylesObject : {}}
         >
           <p>Play harder, Shop better. Experience the ease with Points!</p>
-          <span className={`circle ${styles.points_circle}`} />
+          <span
+            style={activeDivId === "div6" ? CircleStylesObject : {}}
+            className={`circle ${styles.points_circle}`}
+          />
         </div>
+        <div
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeDivId === "div6" && "bg-[#242929]"
+          }`}
+        />
       </AnimateIn>
     </div>
   );

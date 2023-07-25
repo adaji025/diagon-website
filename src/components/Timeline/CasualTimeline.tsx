@@ -10,7 +10,6 @@ type CasualTimelineProps = {
 
 const CasualTimeline: React.FC<CasualTimelineProps> = ({backgroundDivIndex, setBackgroundDivIndex}) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
-  
 
   const divRefs: React.RefObject<HTMLDivElement>[] = [];
 
