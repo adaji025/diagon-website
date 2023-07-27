@@ -2,7 +2,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "../../styles/PointsTimeline.module.css";
 import { AnimateIn } from "../AnimateScreen";
-import Bg from "../../../public/svgs/point-circle.svg";
 
 type PointTimelineProps = {
   activeDivId: string | null;

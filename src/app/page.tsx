@@ -10,7 +10,7 @@ import CasualTimeline from "@/components/Timeline/CasualTimeline";
 import PointsTimeline from "@/components/Timeline/PointsTimeline";
 
 export default function Home() {
-  const [backgroundDivIndex, setBackgroundDivIndex] = useState<number | null>(
+  const [activeTimeline, setActiveTimeline] = useState<string | null>(
     null
   );
   const [activeDivId, setActiveDivId] = useState<string | null>(null);
@@ -61,19 +61,19 @@ export default function Home() {
       </div>
 
       {/* Casual description */}
-      <div className="bg-black py-5">
+      <div className="bg-black py-5 overflow-hidden">
         <div className={`py-20 ${styles.exp}`}>
           <div className="flex flex-col md:flex-row gap-10 items-center max-w-[1200px] mx-auto px-4 md:px-6">
             <div className="flex-1 flex justify-center order-2 md:order-1">
               <img
                 src={
-                  backgroundDivIndex === 0
+                  activeTimeline === "div1"
                     ? "/image/casual.png"
-                    : backgroundDivIndex === 1
+                    : activeTimeline === "div2"
                     ? "/image/casual-1.png"
-                    : backgroundDivIndex === 2
+                    : activeTimeline === "div3"
                     ? "/image/casual-2.png"
-                    : backgroundDivIndex === 3
+                    : activeTimeline === "div4"
                     ? "/image/casual-3.png"
                     : "/image/casual.png"
                 }
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
               <CasualTimeline
-                {...{ backgroundDivIndex, setBackgroundDivIndex }}
+                {...{ setActiveTimeline, activeTimeline }}
               />
               <div className="flex gap-5 mt-10">
                 <button className="w-[40%]">
@@ -161,7 +161,6 @@ export default function Home() {
       </AnimateIn>
 
       {/* Subscription section */}
-      <AnimateIn className="">
         <div
           className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
         >
@@ -189,7 +188,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </AnimateIn>
 
       {/* empty image */}
       <div className="my-20">

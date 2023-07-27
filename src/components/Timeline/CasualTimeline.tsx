@@ -4,130 +4,146 @@ import styles from "../../styles/CasualTimeline.module.css";
 import { AnimateIn } from "../AnimateScreen";
 
 type CasualTimelineProps = {
-  backgroundDivIndex: number | null
-  setBackgroundDivIndex : Function
-}
+  activeTimeline: string | null;
+  setActiveTimeline: Function;
+};
 
-const CasualTimeline: React.FC<CasualTimelineProps> = ({backgroundDivIndex, setBackgroundDivIndex}) => {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
-
-  const divRefs: React.RefObject<HTMLDivElement>[] = [];
-
-  // Create refs for each div element
-  const CreateDivRef = (index: number): React.RefObject<HTMLDivElement> => {
-    const ref = useRef<HTMLDivElement>(null);
-    divRefs[index] = ref;
-    return ref;
-  };
-
-  // Function to get the top position of each div element
-  const getTopPositions = () => {
-    const topPositions = divRefs.map((ref) => {
-      if (ref.current) {
-        return ref.current.getBoundingClientRect().top;
-      }
-      return null;
-    });
-    return topPositions;
-  };
-
+const CasualTimeline: React.FC<CasualTimelineProps> = ({
+  activeTimeline,
+  setActiveTimeline,
+}) => {
   useEffect(() => {
-    // Update the scroll position in the state on scroll
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
+      const divElements = document.querySelectorAll(".scroll-div");
+      let activeDiv: string | null = null;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      divElements.forEach((divElement) => {
+        const { top, bottom } = divElement.getBoundingClientRect();
+        const isInView = top >= 0 && bottom <= window.innerHeight;
 
-  useEffect(() => {
-    // Get the top positions of each div element
-    const topPositions = getTopPositions();
-
-    // Determine which div should have the background with a slight delay
-    let newIndex: number | null = null;
-    for (let i = 0; i < topPositions.length; i++) {
-      if (topPositions[i] !== null) {
-        const element = divRefs[i].current;
-        if (element) {
-          const isTopInView =
-            // @ts-ignore
-            topPositions[i] - window.innerHeight + element.clientHeight <
-            scrollPosition;
-          // @ts-ignore
-          const isBottomInView = topPositions[i] > scrollPosition;
-          if (isTopInView && isBottomInView) {
-            newIndex = i;
-            break;
-          }
+        if (isInView) {
+          activeDiv = divElement.id;
         }
-      }
-    }
+      });
 
-    // Update the background div index state with a slight delay
-    setTimeout(() => {
-      setBackgroundDivIndex((prevIndex: number) =>
-        newIndex !== null ? newIndex : prevIndex
-      );
-    }, 200); // Adjust the delay duration as needed
-  }, [scrollPosition]);
+      setActiveTimeline(activeDiv);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeTimeline]);
+
+  console.log("activeDiv ==>", activeTimeline);
+
+  const CircleStylesObject = {
+    background: `url(/svgs/casual-circle.svg)`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    height: "40px",
+    width: "40px",
+  };
+
+  const TimelineItemStylesObject = {
+    background:
+      "linear-gradient(280deg, #9d0101 0%, rgba(199, 14, 14, 0) 100%)",
+  };
 
   return (
     <div className={`text-white  ${styles.timeline_container}`}>
-      <AnimateIn className="">
+      <AnimateIn className="flex items-center relative">
+        <span
+          className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
+          style={activeTimeline === "div1" ? CircleStylesObject : {}}
+        />
         <div
-          ref={CreateDivRef(0)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center ${styles.timeline_item} ${
-            backgroundDivIndex === 0 ? "background-in-view" : ""
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeTimeline === "div1" && "bg-[#242929]"
           }`}
+        />
+        <div
+          id="div1"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item} $`}
+          style={activeTimeline === "div1" ? TimelineItemStylesObject : {}}
         >
           <p>Game your way to fun and rewards</p>
           <span className={`circle  ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
-      <AnimateIn className="">
+
+      <AnimateIn className="flex items-center relative">
+        <span
+          className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
+          style={activeTimeline === "div2" ? CircleStylesObject : {}}
+        />
         <div
-          ref={CreateDivRef(1)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
-            backgroundDivIndex === 1 ? "background-in-view" : ""
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeTimeline === "div2" && "bg-[#242929]"
           }`}
+        />
+        <div
+          id="div2"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
+          style={activeTimeline === "div2" ? TimelineItemStylesObject : {}}
         >
           <p>Upgrade your gaming rig and build your ranks</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
 
-      <AnimateIn className="">
+      <AnimateIn className="flex items-center relative">
+        <span
+          className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
+          style={activeTimeline === "div3" ? CircleStylesObject : {}}
+        />
         <div
-          ref={CreateDivRef(2)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
-            backgroundDivIndex === 2 ? "background-in-view" : ""
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeTimeline === "div3" && "bg-[#242929]"
           }`}
+        />
+        <div
+          id="div3"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div  ${styles.timeline_item}`}
+          style={activeTimeline === "div3" ? TimelineItemStylesObject : {}}
         >
           <p>Play games, gather Points, Win big</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
-      <AnimateIn className="">
+
+      <AnimateIn className="flex items-center relative">
+        <span
+          className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
+          style={activeTimeline === "div4" ? CircleStylesObject : {}}
+        />
         <div
-          ref={CreateDivRef(3)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
-            backgroundDivIndex === 3 ? "background-in-view" : ""
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeTimeline === "div4" && "bg-[#242929]"
           }`}
+        />
+        <div
+          id="div4"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div  ${styles.timeline_item}`}
+          style={activeTimeline === "div4" ? TimelineItemStylesObject : {}}
         >
           <p>Compete with friends and top the leaderboard</p>
           <span className={`circle ${styles.casual_circle}`} />
         </div>
       </AnimateIn>
-      <AnimateIn className="">
+
+      <AnimateIn className="flex items-center relative">
+      <span
+          className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
+          style={activeTimeline === "div5" ? CircleStylesObject : {}}
+        />
         <div
-          ref={CreateDivRef(4)}
-          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center  ${styles.timeline_item} ${
-            backgroundDivIndex === 4 ? "background-in-view" : ""
+          className={`h-1 w-1 -mt-2 flex-1 ${
+            activeTimeline === "div5" && "bg-[#242929]"
           }`}
+        />
+        <div
+          id="div5"
+          className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div  ${styles.timeline_item} `}
+          style={activeTimeline === "div5" ? TimelineItemStylesObject : {}}
         >
           <p>Etch your gaming milestones on CASUAL</p>
           <span className={`circle ${styles.casual_circle}`} />
