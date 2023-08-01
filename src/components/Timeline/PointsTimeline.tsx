@@ -33,8 +33,6 @@ const PointsTimeline: FC<PointTimelineProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeDivId]);
 
-  console.log("activeDiv ==>", activeDivId);
-
   const CircleStylesObject = {
     background: `url("/svgs/point-circle.svg")`,
     backgroundPosition: "center",

@@ -25,9 +25,11 @@ const Navbar = () => {
             </div>
           </div>
 
+         <Link href="/games">
           <button className="hidden md:flex bg-white rounded-full px-6 py-4 font-semibold">
             Play Free Games
           </button>
+          </Link>
 
           <div className="md:hidden cursor-pointer">
             {sideNav ? (

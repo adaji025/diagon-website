@@ -1,3 +1,4 @@
+import NextTopLoader from "nextjs-toploader";
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -7,7 +8,7 @@ import Footer from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DIAGON Studios",
+  title: "DIAGON: Play Games & Shop with your Points on the Go!",
   description: "Play Games & Shop with your Points on the Go!",
   icons: {
     icon: "/diagon-icon.jpg",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <NextTopLoader color="#2A7671" />
         <Navbar />
         {children}
         <Footer />
