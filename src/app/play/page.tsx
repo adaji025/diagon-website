@@ -1,21 +1,13 @@
-"use client" 
+"use client"
 import React, { useEffect } from 'react';
 import Head from "next/head";
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation'
 
 
-interface GameQuery {
-  url: string;
-  // Add other properties if available in the query
-}
 
 export default function PlayGame() {
-  const router = useRouter();
-  const game: GameQuery = router.query as unknown as GameQuery;
-
-  if (!game || !game.url) {
-    return <div>Loading...</div>;
-  }
+  const searchParams = useSearchParams()
+  const game = searchParams
 
   return (
     <div>
