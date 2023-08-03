@@ -9,7 +9,7 @@ interface Game {
 }
 
 async function getData() {
-  const res = await fetch("https://api.diagon.io/games");
+  const res = await fetch("https://api.diagon.gg/games");
 
   if (!res.ok) {
     throw new Error("Failed to fetch games data");
@@ -17,6 +17,9 @@ async function getData() {
 
   return res.json();
 }
+
+
+
 
 const Card: React.FC<{ game: Game }> = ({ game }) => {
   return (
