@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "How do I convert CLS Token to Cash?",
-    answer: `Play games to gather a minimum of 100,00 points and proceed to your
+    answer: `Play games to gather a minimum of 10,000 points and proceed to your
     in-App CSL wallet to convert points.`
   },
   {
