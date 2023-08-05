@@ -140,7 +140,7 @@ export default function Footer() {
                 src="/svgs/diagon-logo.svg"
                 alt="Company name"
               />
-              {/* <div
+              <div
                 className="inline-flex items-center gap-2 mt-5 cursor-pointer"
                 onClick={() => setModalOpen(!modalOpen)}
               >
@@ -157,11 +157,11 @@ export default function Footer() {
               <div className="inline-flex items-center gap-2 mt-5">
                 <GlobeAltIcon />
                 <span className="text-lg">English</span>
-              </div> */}
+              </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold">Products</h3>
+              <h3 className="text-lg font-extrabold">Products</h3>
               <ul role="list" className="mt-3 space-y-2">
                 {navigation.solutions.map((item) => (
                   <li key={item.name}>

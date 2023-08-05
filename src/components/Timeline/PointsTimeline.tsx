@@ -45,7 +45,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
 
   return (
     <div className={`text-white ${styles.timeline_container}`}>
-      <AnimateIn className="flex items-center">
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div1")}>
         <div
           id="div1"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div  ${styles.timeline_item} `}
@@ -63,7 +63,8 @@ const PointsTimeline: FC<PointTimelineProps> = ({
           }`}
         />
       </AnimateIn>
-      <AnimateIn className="flex items-center">
+
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div2")}>
         <div
           id="div2"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
@@ -82,7 +83,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
         />
       </AnimateIn>
 
-      <AnimateIn className="flex items-center">
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div3")}>
         <div
           id="div3"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
@@ -101,7 +102,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
         />
       </AnimateIn>
 
-      <AnimateIn className="flex items-center">
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div4")}>
         <div
           id="div4"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
@@ -120,7 +121,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
         />
       </AnimateIn>
 
-      <AnimateIn className="flex items-center">
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div5")}>
         <div
           id="div5"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}
@@ -139,7 +140,7 @@ const PointsTimeline: FC<PointTimelineProps> = ({
         />
       </AnimateIn>
 
-      <AnimateIn className="flex items-center">
+      <AnimateIn className="flex items-center cursor-pointer" onClick={() => setActiveDivId("div6")}>
         <div
           id="div6"
           className={`min-h-[80px] py-3 pl-10 pr-5 w-[80%] flex items-center scroll-div ${styles.timeline_item}`}

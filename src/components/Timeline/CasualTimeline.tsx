@@ -50,7 +50,9 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
 
   return (
     <div className={`text-white  ${styles.timeline_container}`}>
-      <AnimateIn className="flex items-center relative">
+      <AnimateIn className="flex items-center cursor-pointer relative"
+        onClick={() => setActiveTimeline("div1")}
+      >
         <span
           className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
           style={activeTimeline === "div1" ? CircleStylesObject : {}}
@@ -70,7 +72,8 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
         </div>
       </AnimateIn>
 
-      <AnimateIn className="flex items-center relative">
+      <AnimateIn className="flex items-center cursor-pointer relative"
+      onClick={() => setActiveTimeline("div2")}>
         <span
           className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
           style={activeTimeline === "div2" ? CircleStylesObject : {}}
@@ -90,7 +93,8 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
         </div>
       </AnimateIn>
 
-      <AnimateIn className="flex items-center relative">
+      <AnimateIn className="flex items-center cursor-pointer relative"
+      onClick={() => setActiveTimeline("div3")}>
         <span
           className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
           style={activeTimeline === "div3" ? CircleStylesObject : {}}
@@ -110,7 +114,8 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
         </div>
       </AnimateIn>
 
-      <AnimateIn className="flex items-center relative">
+      <AnimateIn className="flex items-center cursor-pointer relative"
+      onClick={() => setActiveTimeline("div4")}>
         <span
           className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
           style={activeTimeline === "div4" ? CircleStylesObject : {}}
@@ -130,10 +135,14 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
         </div>
       </AnimateIn>
 
-      <AnimateIn className="flex items-center relative">
-      <span
+      <AnimateIn
+        className="flex items-center cursor-pointer relative"
+        onClick={() => setActiveTimeline("div5")}
+      >
+        <span
           className={`circle rounded-full absolute -left-5 z-10 ${styles.points_circle}`}
           style={activeTimeline === "div5" ? CircleStylesObject : {}}
+          onClick={() => setActiveTimeline("div5")}
         />
         <div
           className={`h-1 w-1 -mt-2 flex-1 ${
