@@ -40,7 +40,7 @@ const LeadersBoard = () => {
   }, []);
 
   return (
-    <div className="pt-[200px]">
+    <div className="bg-black text-white pt-[200px]">
       <div className="max-w-[1200px] mx-auto  bg-[#1C1C1E] px-8 md:px-20 pb-[200px]">
         <table className="table-fixed w-full border-separate border-spacing-y-10">
           <thead className="bg-[#FDD015] text-black">
