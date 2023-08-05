@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import numeral from "numeral";
+import numbro from "numbro";
 
 interface LeaderData {
   username: string;
@@ -25,7 +25,7 @@ const LeadersBoard = () => {
             const number = index + 1;
             return {
               ...leader,
-              number: numeral(number).format("0"),
+              number: numbro(number).format("0"),
             };
           }
         );
@@ -77,7 +77,7 @@ const LeadersBoard = () => {
                       <img src="/svgs/ticket.svg" alt="" />
                       <div className="text-sm sm:text-base  text-[#FDD015]">
                         {" "}
-                        {numeral(leader.challenge).format("0,0")}
+                        {numbro(leader.challenge).format({thousandSeparated: true})}
                       </div>
                     </div>
                   </div>
