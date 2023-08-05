@@ -39,11 +39,18 @@ const Games = () => {
               />
 
               <div className="flex justify-between mt-5">
-                <a href={game.url}>
+              <Link
+                  href={{
+                    pathname: "/play",
+                    query: {
+                      game: game.url,
+                    },
+                  }}
+                >
                   <span className="font-bold text-base capitalize text-white">
                     {game.title}
                   </span>
-                </a>
+                </Link>
                 <Link
                   href={{
                     pathname: "/play",
