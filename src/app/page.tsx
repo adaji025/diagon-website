@@ -137,7 +137,6 @@ export default function Home() {
       </div>
 
       {/* games description */}
-      <AnimateIn className="">
         <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
           <div
             className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
@@ -159,7 +158,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </AnimateIn>
 
       {/* Subscription section */}
         <div
