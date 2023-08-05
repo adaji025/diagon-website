@@ -1,5 +1,5 @@
 "use client";
-
+import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import styles from "../styles/Home.module.css";
@@ -17,6 +17,7 @@ export default function Home() {
 
   return (
     <div className="bg-black">
+      
       {/* hero */}
       <div
         className={`h-[80vh] w-full flex flex-col justify-center items-center px-6 md:px-6 ${styles.hero}`}
