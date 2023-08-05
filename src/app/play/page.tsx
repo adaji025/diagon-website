@@ -17,7 +17,7 @@ const Play = () => {
           content="DIAGON GAMES - A hyper-casual play-to-earn platform that gives you the best digital living experience with crypto."
         />
       </Head>
-      <section id="app-index" className="md:grid grid-cols-12 relative bg-white w-full">
+      <section className="md:grid grid-cols-12 relative  w-full">
         <div className="app-main overflow-y-scroll md:overflow-y-auto w-full md:grid grid-cols-12 col-span-12">
           {game && (
             <iframe
