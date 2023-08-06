@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from "react";
+import React, { FC, MouseEventHandler, RefObject, useEffect, useRef, useState } from "react";
 
  export function useElementOnScreen(
     ref: RefObject<Element>,
@@ -28,10 +28,10 @@ import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 type PropsWithChildren = {
     children: React.ReactNode
     className: string
-    
+    onClick: MouseEventHandler<HTMLDivElement>
 }
   
-export const AnimateIn: FC<PropsWithChildren> = ({ children, className,   }) => {
+export const AnimateIn: FC<PropsWithChildren> = ({ children, className, onClick  }) => {
     const ref = useRef<HTMLDivElement>(null);
     const onScreen = useElementOnScreen(ref);
     return (
@@ -42,7 +42,8 @@ export const AnimateIn: FC<PropsWithChildren> = ({ children, className,   }) => 
           translate: onScreen ? "none" : "0 2rem",
           transition: "600ms ease-in-out",
             }}
-            className={className}
+        className={className}
+        onClick={onClick}
       >
         {children}
       </div>
