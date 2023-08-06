@@ -5,10 +5,7 @@ import { useEffect, useState } from "react";
 
 interface Game {
   id: string;
-  image: {
-    url: string;
-    alternativeText: string;
-  };
+  image: string; 
   title: string;
   url: string;
 }
@@ -33,8 +30,8 @@ const Games = () => {
           {games.map((game) => (
             <div key={game.id}>
               <img
-                src={game.image.url}
-                alt={game.image.alternativeText}
+                src={game.image}
+                alt={game.title}
                 className="w-full hover:scale-95 transition-all duration-300 rounded-[10px]"
               />
 
