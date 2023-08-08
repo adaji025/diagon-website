@@ -33,7 +33,6 @@ const CasualTimeline: React.FC<CasualTimelineProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeTimeline]);
 
-  console.log("activeDiv ==>", activeTimeline);
 
   const CircleStylesObject = {
     background: `url(/svgs/casual-circle.svg)`,

@@ -27,7 +27,7 @@ const Navbar = () => {
 
          <Link href="/games">
           <button className="hidden md:flex bg-white rounded-full px-6 py-4 font-semibold">
-            Play Free Games
+            Play free games
           </button>
           </Link>
 
