@@ -5,7 +5,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel =   () => {
+interface GameTypes {
+  games: {
+    id: string;
+    image: string;
+    title: string;
+    url: string;
+  }[];
+}
+
+const Carousel: React.FC<GameTypes> = ({ games }) => {
+  console.log(games);
+
   const settings = {
     dots: true,
     infinite: false,
@@ -52,9 +63,9 @@ const Carousel =   () => {
   return (
     <div className="!overflow-hidden">
       <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div className="" key={index} >
-            <img src={slide} alt="protector" className="pr-4 w-full" />
+        {games.map((slide, index) => (
+          <div className="" key={index}>
+            <img src={slide.image} alt="protector" className="pr-4 w-full" />
           </div>
         ))}
       </Slider>
