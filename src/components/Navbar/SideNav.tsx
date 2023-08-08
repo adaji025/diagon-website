@@ -34,7 +34,7 @@ const SideNav = ({ sideNav, setSideNav }: Props) => {
       </div>
       <div className="mx-auto w-4/5">
         <button className="mt-10 w-full bg-white  px-6 py-4 font-semibold">
-          Play Free Games
+          Play free games
         </button>
       </div>
     </div>
