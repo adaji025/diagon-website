@@ -6,14 +6,14 @@ const TermsofUse = () => {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto pb-12 md:pb-16">
-            <h2 className="h2 mb-4">TERMS OF USE</h2>
+            <h2 className="h2 mb-4 text-gray-100">TERMS OF USE</h2>
 
-            <p className="text-[16px] text-gray-600 pb-2">
+            <p className="text-[16px] text-gray-100 pb-2">
               Last updated December 14, 2022.
             </p>
 
-            <h3 className="h3 text-[17px] mb-3">INTRODUCTION</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3">INTRODUCTION</h3>
+            <p className="text-[16px] text-gray-100">
               DIAGON Studios Ltd. (“the Company”, “us”, “we” or “our”). This
               Agreement set forth the terms and conditions that govern your use
               of and access to the Website, downloading and/or installing our
@@ -25,7 +25,7 @@ const TermsofUse = () => {
               agree, you are not authorized to access or use the Services and
               should not use the Services.
             </p>
-            <p className="text-[16px] mt-2 text-gray-600">
+            <p className="text-[16px] mt-2 text-gray-100">
               BY ACCESSING OR USING OUR SERVICES, WHICH INCLUDE OUR VARIOUS
               WEBSITES (AND ANY RESPECTIVE SUBDOMAINS); APPLICATIONS
               (COLLECTIVELY WITH ANY MATERIALS AND SERVICES AVAILABLE THEREIN,
@@ -37,8 +37,8 @@ const TermsofUse = () => {
               A BINDING AGREEMENT WITH US THAT INCLUDES THESE TERMS, PRIVACY
               POLICY AND OTHER POLICIES REFERENCED HEREIN.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">USE OF THE SERVICES</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">USE OF THE SERVICES</h3>
+            <p className="text-[16px] text-gray-100">
               To use the Services, you must legally be able to enter into the
               Agreement. By using the Services, you represent and warrant that
               you meet the eligibility requirement. If you do not meet the
@@ -49,8 +49,8 @@ const TermsofUse = () => {
               not meet all these requirements, you may not use or access the
               Services.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">MODIFICATION</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">MODIFICATION</h3>
+            <p className="text-[16px] text-gray-100">
               We may update the Services, the Agreement, and any part of the
               Agreement at any time, for any reason, at our sole discretion.
               Once any part of the Agreement is updated and in effect, you will
@@ -74,8 +74,8 @@ const TermsofUse = () => {
               Services.
             </p>
 
-            <h3 className="h3 text-[17px] mb-3 mt-3">PRIVACY</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">PRIVACY</h3>
+            <p className="text-[16px] text-gray-100">
               DIAGON will only use the personal information that you provide in
               connection with Your use of the Service in accordance with the
               terms of our privacy policy (“Privacy Policy”) available within
@@ -85,8 +85,8 @@ const TermsofUse = () => {
               privacy issues should be directed to our support department at
               help@diagon.io
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ELIGIBILITY</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ELIGIBILITY</h3>
+            <p className="text-[16px] text-gray-100">
               To access or use the Services, you must be able to form a legally
               binding contract with us. Accordingly, you affirm that you are at
               least the age of majority in your jurisdiction and have the full
@@ -108,8 +108,8 @@ const TermsofUse = () => {
               regulations and that you will not access or use the Services to
               conduct, promote, or otherwise facilitate any illegal activity.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ACCOUNT INFORMATION</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ACCOUNT INFORMATION</h3>
+            <p className="text-[16px] text-gray-100">
               You may use the Application anonymously, but in order to access
               and use the rest of the Service (including, but not limited to
               accumulating and redeeming DGN Tokens, DGN tokens and Rewards, and
@@ -143,8 +143,8 @@ const TermsofUse = () => {
                 engage in any activity that violates these Terms.
               </li>
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">LICENSE TO USE OUR SERVICES</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">LICENSE TO USE OUR SERVICES</h3>
+            <p className="text-[16px] text-gray-100">
               We grant you a license to use our Services. Contingent upon your
               ongoing compliance with the Agreement, we grant you a personal,
               worldwide, revocable, non-exclusive and non-assignable license to
@@ -192,8 +192,8 @@ const TermsofUse = () => {
               Application).  It is important to note that the standard carrier
               data charges may apply to your use of the Application.</li>
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">DIAGON TOKENS (DGN TOKENs)</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">DIAGON TOKENS (DGN TOKENs)</h3>
+            <p className="text-[16px] text-gray-100">
               Your use of the DIAGON Applications may allow you to earn DGN
               tokens, in various ways. In the event, DIAGON encounters issues
               with the game that impact the accumulation of DGN tokens, DIAGON
@@ -213,14 +213,14 @@ const TermsofUse = () => {
               including without limitation the DGN tokens therein, whether
               “earned” in a game or “purchased” from DIAGON.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ACCUMULATING DGN TOKENS</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ACCUMULATING DGN TOKENS</h3>
+            <p className="text-[16px] text-gray-100">
               In addition to playing games, You may accumulate DGN tokens on our
               platform by participating in the reward system as may be
               introduced from time to time.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">USE OF DGN TOKENS</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">USE OF DGN TOKENS</h3>
+            <p className="text-[16px] text-gray-100">
               You may use the accumulated DGN tokens to purchase all kinds of
               rare, unique assets, including but not limited to NFTs, via the
               in-game marketplace, as well as myriads of products and services
@@ -231,8 +231,8 @@ const TermsofUse = () => {
               vouchers, gift cards, or any other redeemable offering as may be
               provided by our partners.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">INACTIVE ACCOUNTS</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">INACTIVE ACCOUNTS</h3>
+            <p className="text-[16px] text-gray-100">
               If You do not use your Account by playing a game on a DIAGON
               Application or website to completion at least once every 6 months,
               Your Account will be deemed inactive. You can, at any time,
@@ -250,10 +250,10 @@ const TermsofUse = () => {
               SERVICE OR ACCEPTANCE, POSSESSION, MISUSE OR USE OF ANY PAYMENTS
               FROM DIAGON.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               THIRD-PARTY PROVIDERS OF GOODS AND SERVICES
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               Occasionally, we partner with third parties to provide additional
               opportunities for You to use your DGN tokens. Our Partners reserve
               the right, in their sole discretion, to change, amend, suspend,
@@ -263,8 +263,8 @@ const TermsofUse = () => {
               that DIAGON shall have no liability to You as a result of such
               action or any Rewards Partner.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">TERMINATION</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">TERMINATION</h3>
+            <p className="text-[16px] text-gray-100">
               DIAGON may terminate or suspend Your Account (including, but not
               limited to, suspending your ability to earn and redeem DGN tokens)
               and/or Your access to Service (including, but not limited to,
@@ -281,10 +281,10 @@ const TermsofUse = () => {
               effects of any termination or cancellation on Your use of the
               Service or the DGN tokens You have accumulated.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               NON-SOLICITATION; NO INVESTMENT ADVICE
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               All information provided in connection with your access and use of
               the Services is for informational purposes only. You should not
               take, or refrain from taking, any action based on any information
@@ -307,8 +307,8 @@ const TermsofUse = () => {
               connection with the use of or reliance on any such content, goods,
               or services available on or through any such site or resource.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ASSUMPTION OF RISK</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ASSUMPTION OF RISK</h3>
+            <p className="text-[16px] text-gray-100">
               The information presented on or through the Services is made
               available for general information purposes only. The Company does
               not warrant the accuracy, completeness, suitability or quality of
@@ -327,8 +327,8 @@ const TermsofUse = () => {
               expressly relieve us of any and all liability arising from your
               use of any such resources or participation in any such promotions.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">INTELLECTUAL PROPERTY RIGHTS</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">INTELLECTUAL PROPERTY RIGHTS</h3>
+            <p className="text-[16px] text-gray-100">
               We own all rights in the Services. We own any and all right,
               titles, and interests in and to the Services including, without
               limitation, any and all copyrights in and to any content, code,
@@ -379,11 +379,11 @@ const TermsofUse = () => {
               hold us accountable, for any unauthorized access to your wallet.
               It is your responsibility to monitor your wallet.</li>
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               We reserve the right to restrict your access from engaging with
               the Services.
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               You agree that we have the right to restrict your access to the
               Services via any technically available methods if we suspect, in
               our sole discretion, that: <p>(a) you are using the Services for
@@ -400,10 +400,10 @@ const TermsofUse = () => {
               purposes, we reserve the right to take whatever action we deem
               appropriate. </p>
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               We do not guarantee the quality or accessibility of the Services.
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               As a condition to accessing or using the Services or the Services,
               you acknowledge, understand, and agree that from time to time, the
               Services may be inaccessible or inoperable for any reason,
@@ -420,10 +420,10 @@ const TermsofUse = () => {
               represent that you have been, are and will be solely responsible
               for conducting your due diligence into the risks of a transaction.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               UPDATES TO THE SITE AND SERVICE; MAINTENANCE
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               You acknowledge and agree that DIAGON may update the Service with
               or without notifying You. DIAGON may require that You accept
               updates to the Service and You may also need to update third-party
@@ -435,8 +435,8 @@ const TermsofUse = () => {
               Account, can be reported to DIAGON when the problem is
               encountered by emailing us at help@diagon.io
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">CHANGES AND TERMINATION</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">CHANGES AND TERMINATION</h3>
+            <p className="text-[16px] text-gray-100">
               We may, at any time without notice or liability, and for any
               reason whatsoever, terminate, change, suspend or discontinue any
               aspect of this Service, including: 
@@ -453,8 +453,8 @@ const TermsofUse = () => {
               any time without notice, but confirm that we have no duty to do
               so. </li>
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">INDEMNITY</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">INDEMNITY</h3>
+            <p className="text-[16px] text-gray-100">
               You agree to hold harmless, release, defend, and indemnify us and
               our officers, directors, employees, contractors, agents,
               affiliates, and subsidiaries from and against all claims, damages,
@@ -468,8 +468,8 @@ const TermsofUse = () => {
               any other party's access and use of the Services with your
               assistance or using any device or account that you own or control</p> 
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">DISCLAIMERS </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">DISCLAIMERS </h3>
+            <p className="text-[16px] text-gray-100">
               The Services are provided on an "AS IS" and "AS AVAILABLE" basis.
               TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ANY
               REPRESENTATIONS AND WARRANTIES OF ANY KIND, WHETHER EXPRESS,
@@ -487,8 +487,8 @@ const TermsofUse = () => {
               advertisements, offers, or statements made by third parties
               concerning the Services.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">LIMITATION OF LIABILITY </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">LIMITATION OF LIABILITY </h3>
+            <p className="text-[16px] text-gray-100">
               UNDER NO CIRCUMSTANCES SHALL WE OR ANY OF OUR OFFICERS, DIRECTORS,
               EMPLOYEES, CONTRACTORS, AGENTS, AFFILIATES, OR SUBSIDIARIES BE
               LIABLE TO YOU FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL,
@@ -525,8 +525,8 @@ const TermsofUse = () => {
               Otherwise, this limitation of liability shall apply to the fullest
               extent permitted by law
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">DISPUTE RESOLUTION </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">DISPUTE RESOLUTION </h3>
+            <p className="text-[16px] text-gray-100">
               We will use our best efforts to resolve any potential disputes
               through informal, good-faith negotiations. If a potential dispute
               arises, you must contact us by sending an email to (insert
@@ -550,15 +550,15 @@ const TermsofUse = () => {
               other party. Any judgment on the award rendered by the arbitrator
               may be entered in any court of competent jurisdiction.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">CLASS ACTION </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">CLASS ACTION </h3>
+            <p className="text-[16px] text-gray-100">
               You must bring any and all Disputes against us in your individual
               capacity and not in any purported class action, collective action,
               or other representative proceedings. This provision applies to
               class arbitration.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">GOVERNING LAW </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">GOVERNING LAW </h3>
+            <p className="text-[16px] text-gray-100">
               You agree that the Laws of the Federation of Nigeria (LFN),
               without regard to principles of conflict of laws, govern this
               Agreement and any Dispute between you and us. You further agree
@@ -573,8 +573,8 @@ const TermsofUse = () => {
               Agreement's binding arbitration clause is found to be
               unenforceable.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">MISCELLANEOUS </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">MISCELLANEOUS </h3>
+            <p className="text-[16px] text-gray-100">
               No failure of the Company to exercise, or delay by the Company in
               exercising, any right, remedy, power, or privilege arising from
               this Agreement shall operate or be construed as a waiver thereof,
@@ -583,8 +583,8 @@ const TermsofUse = () => {
               exercise thereof or the exercise of any other right, remedy,
               power, or privilege.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">SEVERABILITY </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">SEVERABILITY </h3>
+            <p className="text-[16px] text-gray-100">
               If any term or provision of this Agreement is found by a court of
               competent jurisdiction to be invalid, illegal, or unenforceable,
               such invalidity, illegality, or unenforceability shall not affect
@@ -592,23 +592,23 @@ const TermsofUse = () => {
               render unenforceable such term or provision in any other
               jurisdiction.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">HEADINGS </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">HEADINGS </h3>
+            <p className="text-[16px] text-gray-100">
               Headings and titles of sections, clauses, and parts in this
               Agreement are for convenience only. Such headings and titles shall
               not affect the meaning of any provisions of the Agreement.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               NO AGENCY, PARTNERSHIP OR JOINT VENTURE
             </h3>
-            <p className="text-[16px] text-gray-600">
+            <p className="text-[16px] text-gray-100">
               No agency, partnership, or joint venture has been created between
               you and the Company as a result of this Agreement. You do not have
               any authority of any kind to bind the Company in any respect
               whatsoever.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ASSIGNMENT</h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ASSIGNMENT</h3>
+            <p className="text-[16px] text-gray-100">
               You shall not assign or delegate any of your rights or obligations
               under this Agreement without the prior written consent of the
               Company. Any purported assignment or delegation in violation of
@@ -620,16 +620,16 @@ const TermsofUse = () => {
               the benefit of, be binding on, and be enforceable against each of
               the parties hereto and their respective successors and assigns.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">ENTIRE AGREEMENT </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">ENTIRE AGREEMENT </h3>
+            <p className="text-[16px] text-gray-100">
               These terms constitute the entire agreement between you and us
               with respect to the subject matter hereof. This Agreement
               supersedes any and all prior or contemporaneous written and oral
               agreements, communications and other understandings (if any)
               relating to the subject matter of the terms.
             </p>
-            <h3 className="h3 text-[17px] mb-3 mt-3">CONTACT INFORMATION </h3>
-            <p className="text-[16px] text-gray-600">
+            <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">CONTACT INFORMATION </h3>
+            <p className="text-[16px] text-gray-100">
               All feedback, comments, requests for technical support, and other
               communications relating to the Services should be directed to the
               help@diagon.io
