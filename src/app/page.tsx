@@ -1,23 +1,38 @@
 "use client";
-import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+
+import { useState, useEffect } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 import styles from "../styles/Home.module.css";
 import { Arrow } from "@/components/Svg/Svg";
 import Faq from "@/components/Faq/Faq";
-import { AnimateIn } from "@/components/AnimateScreen";
 import CasualTimeline from "@/components/Timeline/CasualTimeline";
 import PointsTimeline from "@/components/Timeline/PointsTimeline";
+import Link from "next/link";
+
+interface GameTypes {
+  id: string;
+  image: string; 
+  title: string;
+  url: string;
+}
 
 export default function Home() {
-  const [activeTimeline, setActiveTimeline] = useState<string | null>(
-    null
-  );
+  const [activeTimeline, setActiveTimeline] = useState<string | null>(null);
   const [activeDivId, setActiveDivId] = useState<string | null>(null);
+  const [games, setGames] = useState<GameTypes[]>([]);
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      const res = await fetch("https://api.diagon.gg/games");
+      const game = await res.json();
+      setGames(game);
+    };
+
+    fetchGames();
+  }, []);
 
   return (
     <div className="bg-black">
-      
       {/* hero */}
       <div
         className={`h-[80vh] w-full flex flex-col justify-center items-center px-6 md:px-6 ${styles.hero}`}
@@ -83,9 +98,7 @@ export default function Home() {
               />
             </div>
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
-              <CasualTimeline
-                {...{ setActiveTimeline, activeTimeline }}
-              />
+              <CasualTimeline {...{ setActiveTimeline, activeTimeline }} />
               <div className="flex gap-5 mt-10">
                 <button className="w-[40%]">
                   <img src="/svgs/apple-btn.svg" alt="" />
@@ -137,56 +150,58 @@ export default function Home() {
       </div>
 
       {/* games description */}
-        <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
-          <div
-            className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
-          >
-            <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white text-center font-bold">
-              Explore More Games
-            </h2>
-            <div className="text-[#776E6E] text-center text-2xl">
-              Our arsenal of Casual Games reward players based on tickets
-              gathered.
-            </div>
-            <div className="mt-10 overflow-hidden">
-              <Carousel />
-            </div>
-            <div className="mt-10 mx-auto">
+      <div className="bg-black py-5 max-w-[1200px] mx-auto px-4 md:px-6 ">
+        <div
+          className={`py-20 h-screen flex flex-col justify-center ${styles.games}`}
+        >
+          <h2 className="text-[32px] md:text-[40px] lg:text-[50px] text-white text-center font-bold">
+            Explore More Games
+          </h2>
+          <div className="text-[#776E6E] text-center text-2xl">
+            Our arsenal of Casual Games reward players based on tickets
+            gathered.
+          </div>
+          <div className="mt-10 overflow-hidden">
+            <Carousel {...{games}} />
+          </div>
+          <div className="mt-10 mx-auto">
+            <Link href="/games">
               <button className="flex items-center gap-2 bg-[#1E1E1E] py-3 px-8 rounded-full text-white">
                 See More <Arrow />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Subscription section */}
+      <div
+        className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
+      >
+        <div className="flex justify-center flex-col md:flex-row gap-10 mx-auto">
+          <div className="flex-1">
+            <h2 className="text-[32px] sm:text-[42px] md:text-[52px] max-w-[400px] text-white font-extrabold">
+              Want to get the latest news?
+            </h2>
+          </div>
+          <div className="flex-1">
+            <div className="text-white max-w-[530px] text-2xl">
+              Subscribe to get the latest news on bonuses, promotions and
+              updates on casual gaming and shopping.
+            </div>
+            <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
+              <input
+                type="text"
+                placeholder="Enter Email address"
+                className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
+              />
+              <button className="bg-white py-2 px-5 text-sm rounded-full">
+                Subscribe
               </button>
             </div>
           </div>
         </div>
-
-      {/* Subscription section */}
-        <div
-          className={`max-w-[1200px] mx-auto min-h-[600px] rounded-2xl flex items-center px-6 md:px-6 ${styles.subscribe}`}
-        >
-          <div className="flex justify-center flex-col md:flex-row gap-10 mx-auto">
-            <div className="flex-1">
-              <h2 className="text-[32px] sm:text-[42px] md:text-[52px] max-w-[400px] text-white font-extrabold">
-                Want to get the latest news?
-              </h2>
-            </div>
-            <div className="flex-1">
-              <div className="text-white max-w-[530px] text-2xl">
-                Subscribe to get the latest news on bonuses, promotions and
-                updates on casual gaming and shopping.
-              </div>
-              <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
-                <input
-                  type="text"
-                  placeholder="Enter Email address"
-                  className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
-                />
-                <button className="bg-white py-2 px-5 text-sm rounded-full">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
       {/* empty image */}
       <div className="my-20">
