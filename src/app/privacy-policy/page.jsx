@@ -1,9 +1,9 @@
-import Policy from "@/components/PrivacyPolicy/PrivacyPolicy";
+import PolicyComponent from "@/components/PrivacyPolicy/PrivacyPolicy";
 
 export default function Policy() {
   return (
     <div className="bg-black">
-      <Policy />
+      <PolicyComponent />
     </div>
   );
 }
