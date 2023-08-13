@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 const PolicyComponent = () => {
   return (
     <section>
@@ -50,11 +51,13 @@ const PolicyComponent = () => {
 
             <h3 className="h3 text-gray-100 text-[17px] mb-3 mt-3">
               DATA COLLECTION AND USES
+            {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
             </h3>
+            { /* eslint-disable-next-line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes */}
             <p className="text-[16px] text-gray-100">
               The terms and conditions of this policy apply to all users of
               DIAGON STUDIOS services, including those who access our
-              applications, websites, features, or other services. The "Users"
+              applications, websites, features, or other services. The {"Users"}
               who are governed by this policy are those who fit the following
               criteria:
               <p>
