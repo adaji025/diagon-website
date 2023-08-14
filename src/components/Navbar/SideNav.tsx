@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -7,6 +10,7 @@ type Props = {
 };
 
 const SideNav = ({ sideNav, setSideNav }: Props) => {
+  const navigate = useRouter()
   return (
     <div
       className={`bg-black w-full h-[40%] fixed top-[100px]  z-50 transition-all duration-300 px-4 md:hidden ${
@@ -14,13 +18,17 @@ const SideNav = ({ sideNav, setSideNav }: Props) => {
       }`}
     >
       <div className="grid gap-5 lg:gap-8 text-white font-medium text-base lg:text-lg text-center mt-5">
-        <Link href="https://whitepaper.diagon.io/" className="cursor-pointer">
+        <Link
+          href="https://whitepaper.diagon.io/"
+          className="cursor-pointer"
+          onClick={() => setSideNav(false)}
+        >
           Whitepaper
         </Link>
         <Link
           href="/leadersboard"
-          target="_blank"
           className="cursor-pointer"
+          onClick={() => setSideNav(false)}
         >
           Leaderboard
         </Link>
@@ -28,13 +36,15 @@ const SideNav = ({ sideNav, setSideNav }: Props) => {
           href="https://www.pointstopay.io/"
           target="_blank"
           className="cursor-pointer"
+          onClick={() => setSideNav(false)}
         >
           Shop & Refill
         </Link>
       </div>
       <div className="mx-auto w-4/5">
-        <button className="mt-10 w-full bg-white  px-6 py-4 font-semibold">
-          Play free games
+        <button className="mt-10 w-full bg-white  px-6 py-4 font-semibold"
+        onClick={() => navigate.push("/games")}>
+          Play free Games
         </button>
       </div>
     </div>
