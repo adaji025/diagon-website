@@ -241,9 +241,9 @@ export default function Footer() {
             </div>
 
             <p className="mt-8 text-sm  lg:order-1 lg:mt-0 flex flex-wrap items-center gap-3">
-              &copy; Copyright 2023 .
-              <Link href="/terms-of-use">   <span className="cursor-pointer">Terms and Conditions</span></Link>
-              <Link href="/privacy-policy">  <span className="cursor-pointer">Privacy Policy</span></Link>
+              &copy; Copyright 2023.
+              <Link href="/terms-of-use">   <span className="cursor-pointer">Terms and Conditions.</span></Link>
+              <Link href="/privacy-policy">  <span className="cursor-pointer">Privacy Policy.</span></Link>
             </p>
           </div>
         </div>

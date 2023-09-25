@@ -41,9 +41,11 @@ export default function Home() {
           <h2 className="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[70px] text-white font-extrabold">
             Play Games & Shop with your Points on the Go!
           </h2>
+          <Link href="/games">
           <button className="py-4 px-8 bg-[#E20001] text-2xl rounded-full text-white font-semibold mt-10 hover:bg-opacity-80 hover:scale-95 transition-all duration-300">
             Get Started
           </button>
+          </Link>
         </div>
       </div>
 
