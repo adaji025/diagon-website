@@ -11,7 +11,7 @@ import Link from "next/link";
 
 interface GameTypes {
   id: string;
-  image: string; 
+  image: string;
   title: string;
   url: string;
 }
@@ -42,9 +42,9 @@ export default function Home() {
             Play Games & Shop with your Points on the Go!
           </h2>
           <Link href="/games">
-          <button className="py-4 px-8 bg-[#E20001] text-2xl rounded-full text-white font-semibold mt-10 hover:bg-opacity-80 hover:scale-95 transition-all duration-300">
-            Get Started
-          </button>
+            <button className="py-4 px-8 bg-[#E20001] text-2xl rounded-full text-white font-semibold mt-10 hover:bg-opacity-80 hover:scale-95 transition-all duration-300">
+              Get Started
+            </button>
           </Link>
         </div>
       </div>
@@ -102,12 +102,22 @@ export default function Home() {
             <div className="flex-1 flex flex-col md:items-center justify-center order-1 md:order-2">
               <CasualTimeline {...{ setActiveTimeline, activeTimeline }} />
               <div className="flex gap-5 mt-10">
-                <button className="w-[40%]">
-                  <img src="/svgs/apple-btn.svg" alt="" />
-                </button>
-                <button className="w-[40%]">
+                <Link
+                  className="w-[40%]"
+                  href="https://testflight.apple.com/join/REp8yh7x"
+                  target="_blank"
+                >
+                  <button>
+                    <img src="/svgs/apple-btn.svg" alt="" />
+                  </button>
+                </Link>
+                <Link
+                  className="w-[40%]"
+                  href="https://play.google.com/store/apps/details?id=io.diagon.casual"
+                  target="_blank"
+                >
                   <img src="/svgs/playstore-btn.svg" alt="" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -139,12 +149,20 @@ export default function Home() {
             <div className="flex-1 flex flex-col md:items-center justify-center order-1">
               <PointsTimeline {...{ activeDivId, setActiveDivId }} />
               <div className="flex gap-5 mt-10 max-w-[450px]">
-                <button className="w-[40%]">
+                <Link
+                  href="https://testflight.apple.com/join/REp8yh7x"
+                  target="_blank"
+                  className="w-[40%]"
+                >
                   <img src="/svgs/apple-btn.svg" alt="" />
-                </button>
-                <button className="w-[40%]">
+                </Link>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=io.diagon.casual"
+                  target="_blank"
+                  className="w-[40%]"
+                >
                   <img src="/svgs/playstore-btn.svg" alt="" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -164,7 +182,7 @@ export default function Home() {
             gathered.
           </div>
           <div className="mt-10 overflow-hidden">
-            <Carousel {...{games}} />
+            <Carousel {...{ games }} />
           </div>
           <div className="mt-10 mx-auto">
             <Link href="/games">
