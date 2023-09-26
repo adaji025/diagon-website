@@ -38,7 +38,7 @@ const SideNav = ({ sideNav, setSideNav }: Props) => {
           className="cursor-pointer"
           onClick={() => setSideNav(false)}
         >
-          Shop & Refill
+          Marketplace
         </Link>
       </div>
       <div className="mx-auto w-4/5">
