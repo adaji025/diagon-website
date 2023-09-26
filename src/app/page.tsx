@@ -209,16 +209,31 @@ export default function Home() {
               Subscribe to get the latest news on bonuses, promotions and
               updates on casual gaming and shopping.
             </div>
-            <div className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2">
+            <form
+              action="https://api.sheetmonkey.io/form/3E8muefKmGquAkQj2x9sSB"
+              method="post"
+              className="mt-5 bg-white/10 rounded-full max-w-[530px] flex justify-between items-center px-2"
+            >
               <input
-                type="text"
+                type="hidden"
+                name="x-sheetmonkey-redirect"
+                value="https://diagon.io/success"
+                // value="http://localhost:3000/success"
+              />
+              <input
+                type="email"
+                name="Email"
+                required
                 placeholder="Enter Email address"
                 className="w-full py-3 bg-transparent outline-none px-2 text-white text-sm"
               />
-              <button className="bg-white py-2 px-5 text-sm rounded-full">
+              <button
+                type="submit"
+                className="bg-white py-2 px-5 text-sm rounded-full"
+              >
                 Subscribe
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
